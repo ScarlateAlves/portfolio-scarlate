@@ -27,7 +27,7 @@ export const Card = ({ src, title, git, link }: CardProps) => {
               </Link>
             </Button>
           </Flex>
-          <LinkStyles href={git}>
+          <LinkStyles href={git} target="_blank">
             <GitHubIcon />
           </LinkStyles>
         </Item>
