@@ -1,37 +1,40 @@
-import Link from 'next/link'
-import { NavContainerStyles, NavStyles } from './styles'
-import { Text } from '../index'
+import { NavContainerStyles, NavStyles, Link, Container } from './styles'
 import logo from '../../assets/image/logo.png'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export const NavBar = () => {
+  const [colorChange, setColorchange] = useState<boolean>(false)
+
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 150) {
+      setColorchange(true)
+    } else {
+      setColorchange(false)
+    }
+  }
+  if (typeof window !== 'undefined') {
+    window.addEventListener('scroll', changeNavbarColor)
+  }
+
   return (
-    <NavContainerStyles>
-      <Link href="#">
-        <Image style={{ cursor: 'pointer' }} width="170px" src={logo} />
-      </Link>
-      <NavStyles>
+    <Container border={colorChange}>
+      <NavContainerStyles>
         <Link href="#home">
-          <Text cursor size="1rem">
-            Início
-          </Text>
+          <Image
+            height="80px"
+            style={{ cursor: 'pointer' }}
+            width="150px"
+            src={logo}
+          />
         </Link>
-        <Link href="#home">
-          <Text cursor size="1rem">
-            Sobre
-          </Text>
-        </Link>
-        <Link href="#home">
-          <Text cursor size="1rem">
-            Projeto
-          </Text>
-        </Link>
-        <Link href="#home">
-          <Text cursor size="1rem">
-            Contato
-          </Text>
-        </Link>
-      </NavStyles>
-    </NavContainerStyles>
+        <NavStyles>
+          <Link href="#home">Início</Link>
+          <Link href="#about">Sobre</Link>
+          <Link href="#projects">Projeto</Link>
+          <Link href="#contact">Contato</Link>
+        </NavStyles>
+      </NavContainerStyles>
+    </Container>
   )
 }

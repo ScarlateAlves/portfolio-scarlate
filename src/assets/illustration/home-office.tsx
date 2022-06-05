@@ -6,7 +6,7 @@ export function HomeOffice({ ...props }: SVGProps<SVGSVGElement>) {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width="821"
-      height="765"
+      height="988"
       fill="none"
       viewBox="0 0 621 328"
       {...props}

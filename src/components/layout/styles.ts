@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.div<{ height?: string }>`
+  height: ${(props) => props.height ?? ''};
   display: grid;
   width: 80%;
   margin: auto;
