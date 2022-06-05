@@ -1,51 +1,41 @@
 import { Box, Flex } from 'rebass'
-import { Heading, Text } from '..'
-import { Card } from '../card'
+import { Heading, Text } from '../../components'
+import { Card } from '../../components/card'
 import drinks from '../../assets/image/drinks.png'
 import organic from '../../assets/image/organic.png'
 import resiliaflix from '../../assets/image/resiliaflix.png'
+import scarflix from '../../assets/image/scarflix.png'
+import poke from '../../assets/image/poke.png'
 import { For } from 'react-extras'
 
 const data = [
   {
+    src: drinks,
+    titlle: 'Drinks',
+    git: 'https://github.com/ScarlateAlves/DrinksReact',
+    link: 'https://romantic-borg-d5a880.netlify.app/home',
+  },
+  {
     src: resiliaflix,
-    titlle: 'Drinks',
-    git: 'https://github.com/ScarlateAlves/DrinksReact',
-  },
-  {
-    src: drinks,
-    titlle: 'Drinks',
-    git: 'https://github.com/ScarlateAlves/DrinksReact',
-  },
-  {
-    src: drinks,
-    titlle: 'Drinks',
-    git: 'https://github.com/ScarlateAlves/DrinksReact',
-  },
-  {
-    src: drinks,
-    titlle: 'Drinks',
-    git: 'https://github.com/ScarlateAlves/DrinksReact',
-  },
-  {
-    src: drinks,
-    titlle: 'Drinks',
-    git: 'https://github.com/ScarlateAlves/DrinksReact',
-  },
-  {
-    src: drinks,
-    titlle: 'Drinks',
-    git: 'https://github.com/ScarlateAlves/DrinksReact',
+    titlle: 'ResiliaFlix',
+    git: 'https://github.com/ScarlateAlves/Projeto-ResiliaFlix',
+    link: 'https://scarlatealves.github.io/Projeto-ResiliaFlix/',
   },
   {
     src: organic,
-    titlle: 'Drinks',
-    git: 'https://github.com/ScarlateAlves/DrinksReact',
+    titlle: 'Organic',
+    git: 'https://github.com/ScarlateAlves/organic',
+    link: 'http://organic.herokuapp.com/',
   },
   {
-    src: resiliaflix,
-    titlle: 'Drinks',
-    git: 'https://github.com/ScarlateAlves/DrinksReact',
+    src: scarflix,
+    titlle: 'Scarflix',
+    git: 'https://github.com/ScarlateAlves/scarflix',
+  },
+  {
+    src: poke,
+    titlle: 'Pokemon',
+    git: 'https://github.com/ScarlateAlves/routes-dynamics-nextjs',
   },
 ]
 
@@ -53,12 +43,15 @@ export const Project = () => {
   return (
     <>
       <Flex
-        mt="5rem"
+        id="projects"
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
+        mb="2rem"
       >
-        <Heading>Projetos</Heading>
+        <Flex alignItems="flex-end" height="20vh">
+          <Heading>Projetos</Heading>
+        </Flex>
         <Text>
           Confira alguns dos meus projetos feitos em React com Next js
         </Text>
@@ -77,9 +70,10 @@ export const Project = () => {
           render={(item, index) => (
             <Card
               key={index}
-              src={item.src}
-              title={item.titlle}
-              git={item.git}
+              src={item?.src}
+              title={item?.titlle}
+              git={item?.git}
+              link={item?.link}
             />
           )}
         />
