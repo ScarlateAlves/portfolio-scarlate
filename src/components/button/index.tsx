@@ -1,6 +1,7 @@
+import { ButtonHTMLAttributes } from 'react'
 import { ButtonStyles } from './styles'
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode
   primary?: boolean
 }
