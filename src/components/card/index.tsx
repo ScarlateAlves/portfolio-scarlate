@@ -3,8 +3,7 @@ import { Text } from '..'
 import { GitHubIcon } from '../../assets/icon/github-icon'
 import Image from 'next/image'
 import { Flex } from 'rebass'
-import { Button } from '../button'
-import { Link } from '../nav-bar/styles'
+import { ButtonLink } from '../button-link'
 export interface CardProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   src?: any
@@ -16,16 +15,14 @@ export interface CardProps {
 export const Card = ({ src, title, git, link }: CardProps) => {
   return (
     <>
-      <CardContainer href="#">
+      <CardContainer href={link}>
         <Image src={src} style={{ borderRadius: '7px' }} />
         <Item>
           <Flex flexDirection="column">
             <Text size="23px">{title}</Text>
-            <Button>
-              <Link href={link} color="#e85a71" target="_blank">
-                Vermais
-              </Link>
-            </Button>
+            <ButtonLink href={link} color="#e85a71">
+              Vermais
+            </ButtonLink>
           </Flex>
           <LinkStyles href={git} target="_blank">
             <GitHubIcon />

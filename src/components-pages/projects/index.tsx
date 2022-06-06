@@ -1,19 +1,20 @@
 import { Box, Flex } from 'rebass'
+import { For } from 'react-extras'
 import { Heading, Text } from '../../components'
 import { Card } from '../../components/card'
+//import { data } from '../../locales/projects-array'
 import drinks from '../../assets/image/drinks.png'
 import organic from '../../assets/image/organic.png'
 import resiliaflix from '../../assets/image/resiliaflix.png'
 import scarflix from '../../assets/image/scarflix.png'
 import poke from '../../assets/image/poke.png'
-import { For } from 'react-extras'
 
-const data = [
+export const data = [
   {
     src: drinks,
     titlle: 'Drinks',
     git: 'https://github.com/ScarlateAlves/DrinksReact',
-    link: 'https://romantic-borg-d5a880.netlify.app/home',
+    link: 'https://romantic-borg-d5a880.netlify.app/',
   },
   {
     src: resiliaflix,
@@ -38,7 +39,6 @@ const data = [
     git: 'https://github.com/ScarlateAlves/routes-dynamics-nextjs',
   },
 ]
-
 export const Project = () => {
   return (
     <>
